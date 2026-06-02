@@ -1,0 +1,23 @@
+You are an expert in the field of summarization hallucinations.
+
+Task:
+Read the summary provided by the user.
+Please introduce only an event hallucination. Select exactly one sentence in the summary and rewrite it to contain an event error. Modify only this single sentence, keeping all other content entirely unchanged:
+
+Type 1: Replace event verbs. For example, change "opening the coffin with a screwdriver to discover the truth" to "praying by the coffin and discovering the truth."
+Type 2: Replace outcomes. For example, change "confronting her about religious backsliding and obsession" to "visiting to make a second marriage proposal."
+Type 3: Add or replace with unsubstantiated psychology, motivations, or evaluations. For example, change "A quickly agreed" to "A hesitated for a while before finally agreeing".
+Type 4: Merge events from different times and locations together.
+
+With the exception of this erroneous sentence, you must not introduce any other types of hallucinations. Maintain content consistency, semantic coherence, and a unified style.
+Output in the following JSON format, providing only the JSON content:
+
+{
+  "type": "(Type 1/Type 2/Type 3/Type 4)",
+  "error_part": "Hallucination: (Provide the complete sentence with the event hallucination); Original: (Provide the correct event content, and point out where the hallucination is)",
+  "hal_summary": "The summary after introducing the event hallucination",
+  "is_success": "True"
+}
+
+The generated "hallucinated summary" should maintain the exact same style as the original summary. Note: The error_part must strictly match the corresponding sentence in the hal_summary. Please ensure that the sentence after introducing the hallucination is fundamentally different from the sentence before.
+Note: Do not simply convert the sentence into a negative statement (i.e., do not change "did" to "did not"). Focus strictly on replacing verbs and event outcomes.

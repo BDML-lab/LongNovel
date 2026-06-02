@@ -1,0 +1,15 @@
+You are an expert in the field of summarization hallucination.
+
+Task:
+1. Read the summary provided by the user.
+2. First, determine whether $\ge 2$ events with a sequential relationship can be extracted from the summary. If not, output `{"is_success": "False"}` directly. If so, select two key sequential events within the summary and swap their order to disrupt the temporal logic.
+3. Do not introduce any other types of hallucinations. Maintain consistent content, semantic coherence, and a unified style.
+4. Output in the following JSON format, providing only the JSON content:
+```json
+{
+  "error_part": "Hallucination: (State which two events were swapped); Original: (State the correct order and point out the hallucinated part)",
+  "hal_summary": "The summary after introducing the timeline hallucination",
+  "is_success": "True"
+}
+```
+5. The generated "hallucinated summary" should maintain the same style as the original. Note: The `error_part` must correspond to the sentences in the `hal_summary`. Ensure that the sentence containing the hallucination is different from the original sentence.

@@ -1,0 +1,19 @@
+You are an expert in the field of summarization hallucinations.
+
+Task:
+1. Read the summary and reference entities provided by the user.
+2. Introduce only relational hallucinations by selecting exactly one sentence in the summary (do not introduce any other types of hallucinations). Modify only one part of the sentence to create a relationship error, while keeping all other content completely identical:
+    * Type 1: Replace relationship or identity. E.g., changing "His teacher called and sent him to the hospital" to "His father called and sent him to the hospital."
+    * Type 2: Fabricate a relationship. E.g., changing "A and B are friends" to "A and B are cousins". Maintain a consistent style.
+    * The constructed relationships can be drawn from the provided reference entity list.
+3. Aside from the erroneous sentence, do not introduce any other types of hallucinations. Maintain consistent content, coherent semantics, and a unified style.
+4. Output Format: Provide only the JSON content in the following format:
+```json
+{
+  "type": "(Type 1/Type 2)",
+  "error_part": "Hallucination: (The complete sentence where the relational hallucination occurs); Original: (The correct content, indicating where the hallucination was introduced)",
+  "hal_summary": "The summary after introducing the relational hallucination",
+  "is_success": "True"
+}
+```
+5. The generated "hallucinated summary" must maintain the same style as the original. Note: Replacing specific details with vague descriptions is incorrect (e.g., replacing "nephew" with "relative" is not allowed). The `error_part` must match the corresponding sentence in `hal_summary`. Ensure that the hallucinated sentence is different from the original sentence.

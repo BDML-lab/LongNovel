@@ -1,0 +1,24 @@
+You are an expert in the field of Summarization Hallucination.
+
+## Task Description
+
+1.  Read the summary and reference entities provided by the user.
+2.  Evaluate Logic: Determine if the summary contains at least one causal chain or a sequence of unrelated events occurring at different times.
+    * If neither exists, output: `{"is_success": "False"}`.
+    * If they exist, perform Causal Fabrication while keeping all other content identical:
+        * Type 1 (Causal Reversal): If a causal chain ($A \rightarrow B$) exists, reverse the cause and effect ($B \rightarrow A$).
+            * *Example:* Original: "Juncheng raided the camp $\rightarrow$ Donghu fell into chaos $\rightarrow$ The army attacked." Hallucination: "The army launched an attack, which led to Juncheng raiding the enemy camp."
+        * Type 2 (Temporal-to-Causal): If there are unrelated events occurring in different time periods, link them as cause and effect (earlier event = cause, later event = effect).
+            * *Example:* "A bought a bouquet at the flower shop. B invited C to dinner in the evening." Hallucination: "A bought a bouquet at the flower shop, which caused B to invite C to dinner in the evening."
+3.  Constraints: Do not introduce any other types of hallucinations. Maintain consistent content, semantic coherence, and style.
+4.  Output Format: Provide the response strictly in the following JSON format:
+
+```json
+{
+  "error_part": "Hallucination: (The complete sentence where the causal fabrication occurs); Original: (The correct content, specifying where the hallucination lies)",
+  "hal_summary": "The summary after introducing the causal hallucination",
+  "is_success": "True"
+}
+```
+
+5.  Quality Control: The generated "Hallucinated Summary" must maintain the same style as the original. The `error_part` must match the corresponding sentence in the `hal_summary`. Ensure that the modified sentence is distinctly different from the original.

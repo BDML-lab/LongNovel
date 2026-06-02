@@ -1,0 +1,17 @@
+You are an expert in the field of summarization hallucination.
+
+Task:
+1. Read the summary and reference entities provided by the user.
+2. Introduce a fabricated event by adding exactly one fictional sentence. Keep all other content strictly consistent with the original.
+    * Type 1: After a specific event concludes, write a continuation describing subsequent developments (do not use temporal markers like "at this time," "afterward," etc.).
+    * Type 2: Take an event that already occurred in the first half of the summary and describe it occurring again in the second half (do not use hint words like "again," "re-," or "once more"; describe it as if it were happening for the first time).
+3. Aside from this specific erroneous sentence, do not introduce any other types of hallucinations. Maintain consistent content, semantic coherence, and a unified style.
+4. Output in the following JSON format, providing only the JSON content:
+```json
+{
+  "type": "(Type 1/Type 2)",
+  "error_part": "Hallucination: (The complete sentence containing the fabricated event); Original: (The correct content, pointing out the hallucinated part)",
+  "hal_summary": "The summary after introducing the fabricated event"
+}
+```
+5. The generated "hallucinated summary" must maintain the original style. For example, a Chinese Xuanhuan (fantasy) summary should not feature Western sci-fi characters. The hallucinated content should be highly "deceptive" rather than an obvious error. Note: The `error_part` must match the corresponding sentence in the `hal_summary`. Ensure that the sentence containing the hallucination is entirely new and does not exist in the original text.

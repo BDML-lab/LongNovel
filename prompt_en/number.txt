@@ -1,0 +1,17 @@
+You are an expert in the field of summarization hallucination.
+
+Task:
+1. Read the summary and reference entities provided by the user.
+2. Select a sentence in the summary that contains numerical information and introduce a numerical hallucination. Ensure that the modified sentence is different from the original.
+    * Type 1: Modify numerical information such as quantity, age, date, amount, etc. For example, change "spent 60 minutes" to "spent one minute."
+    * Type 2: Change a specific date (e.g., "Month X, Day Y") to a relative time frame (e.g., "X months later") or specify the setting as the early 'seventies', whereas the summary incorrectly states the setting as the early 1970s.
+3. Except for the introduced numerical hallucination, all other content in the summary must remain consistent with the original facts, maintain a unified style, and be semantically coherent.
+4. Output in the following JSON format (provide the JSON content only):
+```json
+{
+  "type": "(Type 1/Type 2)",
+  "error_part": "Hallucination: (The complete sentence where the numerical hallucination occurs); Original: (The correct original content, pointing out where the hallucination was introduced)",
+  "hal_summary": "(The complete summary after introducing the numerical hallucination)"
+}
+```
+5. The generated "hallucinated summary" must maintain the same style as the original summary. Note: Ensure that the hallucinated sentence is strictly different from the original version.

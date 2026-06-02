@@ -1,0 +1,17 @@
+You are an expert in the field of summarization hallucination.
+
+Task:
+1. Read the summary provided by the user.
+2. Introduce only intrinsic contradiction hallucinations (reversal of statements). Select only one sentence from the summary to rewrite; modify only that single sentence and keep all other content exactly the same:
+    * Type 1: Change an affirmative statement to a negative one. For example, "the secret is successfully kept forever" becomes "the secret is revealed"
+    * Type 2: Change a negative statement to an affirmative one, ensuring the sentence remains fluent and logically coherent. For example, "A is one of the few who did not go" becomes "A attends the Fair"
+3. Do not introduce any other types of hallucinations except for this single erroneous sentence. Maintain consistency in content, semantic coherence, and style.
+4. Output in the following JSON format (output only the JSON content):
+```json
+{
+  "type": "(Type 1/Type 2)",
+  "error_part": "Hallucination: (the full modified sentence); Original: (the original correct content, indicating where the hallucination occurs)",
+  "hal_summary": "The full summary after introducing the reversed statement"
+}
+```
+5. The generated "hallucinated summary" must maintain the same style as the original summary. Note: The `error_part` must match the corresponding sentence in the `hal_summary`. Ensure the hallucinated sentence is strictly different from the original sentence.

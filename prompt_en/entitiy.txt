@@ -1,0 +1,18 @@
+You are an expert in the field of summarization hallucinations.
+
+Task:
+1. Read the summary and reference entities provided by the user.
+2. Introduce only Entity Hallucinations by modifying exactly one sentence (do not introduce any other types of hallucinations). You may refer to the provided entities, but ensure the modified version differs in meaning from the original:
+    * Type 1: Pronoun Replacement. Redirect a pronoun within a sentence to the wrong object. For example, change *"Li Qiang handed Wang Wei a glass of water, and he thanked him"* to *"Li Qiang handed Wang Wei a glass of water, and Li Qiang thanked him"* 
+    * Type 2: Role Swapping. Swap the roles (subject, object, etc.) of two real individuals within a sentence. For example, change *"A thanked B for defeating the enemy"* to *"B thanked A for defeating the enemy."* Note: Changing *"A and B ate together"* to *"B and A ate together"* is not allowed because they are semantically equivalent. You must ensure the meaning of the modified sentence is different from the original.
+    * Type 3: Organization/Location/Title Mismatch. Mismatch a person with a location, title, or organization. For example, the summary places the confrontation and surrender of Richard at Berkeley Castle, but the original text identifies the location as Pontefract Castle.
+3. Aside from the introduced entity error, the rest of the summary must remain factually consistent with the original text, maintaining a consistent style and coherent semantics.
+4. Output strictly in the following JSON format (only output the JSON content):
+```json
+{
+  "type": "(Type 1/Type 2/Type 3)",
+  "error_part": "Hallucination: (the complete sentence containing the entity hallucination); Original: (the correct content, pointing out where the hallucination occurs)",
+  "hal_summary": "The summary after introducing the entity hallucination"
+}
+```
+5. The generated "hallucinated summary" must maintain the same style as the original summary. Note: Ensure the sentence after introducing the hallucination is distinctly different from the original sentence.
