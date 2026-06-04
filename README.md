@@ -100,7 +100,7 @@ python run_inference.py --model Qwen3-32B --long_context 32k --mode CoT --data_s
 > Defines the prompting strategy.
 > * `""` (Default): Standard Hallucination Detection inference.
 > * `CoT`: Enables **Chain of Thought** processing for better reasoning.
-> * `PromptB`: A specialized mode that **reorders the input**, placing the summary before the article text to enhance focus.
+> * `PromptB`: **Reorders the input**, placing the summary before the article text.
 
 `--data_split <split>`
 > Specifies which data subset to evaluate.
