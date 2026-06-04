@@ -33,7 +33,7 @@ Although context windows have expanded significantly in recent years, hallucinat
 We introduce LongNovel, a multilingual long-context dataset for hallucination detection in novels, based on human-annotated summaries. It comprises four subsets ranging from 16k to 100k tokens. Our extensive experiments on LongNovel reveal that current large language models still lack sufficient capability in long-context hallucination detection tasks. We hope that LongNovel will provide useful insights for future research in this field.
 
 <p align="center">
-  <img src="assets/leaderboard.png" alt="VSTAT leaderboard" width="100%">
+  <img src="assets/Result.png" alt="Result" width="100%">
 </p>
 
 ## License
