@@ -4,7 +4,7 @@
 
 
 <p align="center">
-  <a href="https://arxiv.org/abs/7667928"><img src="7667928"></a>
+  <a href="--"><img src="https://img.shields.io/badge/arXiv-Paper-red"></a>
   <a href="https://github.com/BDML-lab/LongNovel/"><img src="https://img.shields.io/badge/Project-Website-blue"></a>
   <a href="https://huggingface.co/datasets/SII-BDML/LongNovel/"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20HuggingFace-Benchmark-yellow"></a>
 </p>
