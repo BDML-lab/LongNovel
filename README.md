@@ -22,15 +22,16 @@ Unlike short news articles or academic papers, long novels feature dense, intrin
   <img src="assets/framework.jpg" width="1000">
 </div>
 
-## Updata
+## Updates
 
 - `2026-06` We release LongNovel benchmark.
 
 ## Contents
 
 - [Overview](#overview)
-- [Updata](#updata)
+- [Updata](#updates)
 - [Dataset](#dataset)
+- [Evaluation](#evaluation)
 - [Results](#results)
 - [License](#license)
 - [Acknowledgement](#acknowledgement)
@@ -66,6 +67,47 @@ The data format in **LongNovel** is structured as follows:
     "output": "The hallucination detection result"
 }
 ```
+
+## Evaluation
+
+The script automatically configures rope_scaling based on the model path and context length. By default, it uses Tensor Parallelism (TP) of 8, making it suitable for multi-GPU setups
+
+### Run Model Inference
+
+**Run a standard 64k evaluation:**
+
+```bash
+python run_inference.py --model Qwen3-32B --long_context 64k
+
+```
+
+**Run with Chain of Thought reasoning on a 32k validation set:**
+
+```bash
+python run_inference.py --model Qwen3-32B --long_context 32k --mode CoT --data_split validation
+
+```
+---
+
+### Args
+`--model <name_or_path>`
+> The identifier for the model. It defaults to `Qwen3-32B`. 
+`--long_context <size>`
+> Sets the context length and determines which dataset file to load.
+> **Options:** `16k`, `32k`, `64k`, `100k`.
+
+`--mode <type>`
+> Defines the prompting strategy.
+> * `""` (Default): Standard Hallucination Detection inference.
+> * `CoT`: Enables **Chain of Thought** processing for better reasoning.
+> * `PromptB`: A specialized mode that **reorders the input**, placing the summary before the article text to enhance focus.
+
+`--data_split <split>`
+> Specifies which data subset to evaluate.
+> * `test`: (Default) Uses test sets.
+> * `validation`: Uses validation sets (only supported for 16k/32k).
+
+
 
 
 
