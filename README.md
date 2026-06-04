@@ -38,6 +38,10 @@ Unlike short news articles or academic papers, long novels feature dense, intrin
 
 
 ## Dataset
+<p align="center">
+  <img src="assets/dataset.png" alt="Result" width="100%">
+</p>
+
 ### Load Data
 You can download and load the LongNovel data through [this link](https://huggingface.co/datasets/SII-BDML/LongNovel) :
 
@@ -70,7 +74,7 @@ The data format in **LongNovel** is structured as follows:
 We introduce LongNovel, a multilingual long-context dataset for hallucination detection in novels, based on human-annotated summaries. It comprises four subsets ranging from 16k to 100k tokens. Our extensive experiments on LongNovel reveal that current large language models still lack sufficient capability in long-context hallucination detection tasks. We hope that LongNovel will provide useful insights for future research in this field.
 
 <p align="center">
-  <img src="assets/Result.png" alt="Result" width="100%">
+  <img src="assets/heatmap.png" alt="Result" width="100%">
 </p>
 
 ## License
