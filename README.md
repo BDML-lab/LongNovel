@@ -75,6 +75,15 @@ We introduce LongNovel, a multilingual long-context dataset for hallucination de
 
 <p align="center">
   <img src="assets/heatmap.png" alt="Result" width="100%">
+  <br>
+    <b>Recall performance of various LLMs across different hallucination types.</b>
+    <br>
+    <small>
+      <font color="#666">
+        <b>Evt</b>: Event, <b>Ent</b>: Entity, <b>Rel</b>: Relation, <b>Num</b>: Numerical, 
+        <b>Tmp</b>: Temporal, <b>Cau</b>: Causal, <b>Log</b>: Logical Inversion, <b>Fab</b>: Fabrication.
+      </font>
+    </small>
 </p>
 
 ## License
