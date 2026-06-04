@@ -1,4 +1,4 @@
-
+# 📖 LongNovel: A Multi-Scale Benchmark for Hallucination Detection in Long-Context Novel Summarization
 <p align="center">
   <a href="--"><img src="https://img.shields.io/badge/arXiv-Paper-red"></a>
   <a href="https://github.com/BDML-lab/LongNovel/"><img src="https://img.shields.io/badge/Project-Website-blue"></a>
