@@ -1,6 +1,6 @@
 # 📖 LongNovel: A Multi-Scale Benchmark for Hallucination Detection in Long-Context Novel Summarization
 <p align="center">
-  <a href="--"><img src="https://img.shields.io/badge/arXiv-Paper-red"></a>
+  <a href="https://arxiv.org/abs/2608.18082"><img src="https://img.shields.io/badge/arXiv-Paper-red"></a>
   <a href="https://github.com/BDML-lab/LongNovel/"><img src="https://img.shields.io/badge/Project-Website-blue"></a>
   <a href="https://huggingface.co/datasets/SII-BDML/LongNovel/"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20HuggingFace-Benchmark-yellow"></a>
 </p>
@@ -141,7 +141,15 @@ We would like to express our gratitude to the annotators from iQIYI for their hi
 If you find our benchmark and code useful, please consider citing our work:
 
 ```bibtex
-The ArXiv link will be added soon.
+@misc{zhang2026longnovelmultiscalebenchmarkhallucination,
+      title={LongNovel: A Multi-Scale Benchmark for Hallucination Detection in Long-Context Novel Summarization}, 
+      author={Ruizhi Zhang and Jinwei Chen and Xiangju Lu and He Yan and Mo Yu and Junmin Zhu and Wei Zhang},
+      year={2026},
+      eprint={2608.18082},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2608.18082}, 
+}
 ```
 
 
